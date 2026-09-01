@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arturo X Naucalpan - Cómic Style</title>
+  
+  <!-- Fuente tipográfica estilo Cómic / Bangers -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN DE PESTAÑAS -->
+  <nav class="comic-navbar">
+    <!-- Cambiado a ARTURO X NAUCALPAN -->
+    <a href="#inicio" class="nav-brand">ARTURO X NAUCALPAN</a>
+    <ul class="nav-menu">
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#quien-soy" class="nav-link">¿Quién Soy?</a></li>
+      <li><a href="#problematica" class="nav-link">Problemática</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- SECCIÓN INICIO CON EL NUEVO LOGO -->
+    <header id="inicio" class="comic-panel header-panel">
+      <div class="logo-container">
+        <!-- Reemplaza "logo-arturo.jpg" con la imagen de tu nuevo logo -->
+        <img src="logoart.png" alt="Arturo X Naucalpan Logo" class="main-logo">
+      </div>
+      <div class="speech-bubble">
+        <h2>¡Convicción para servir, Determinación para lograrlo!</h2>
+      </div>
+    </header>
+
+    <!-- SECCIÓN QUIÉN SOY CON FOTO CON BORDES DE CÓMIC -->
+    <section id="quien-soy" class="comic-panel about-section">
+      <h2 class="section-title">¿Quién Soy?</h2>
+      
+      <div class="about-grid">
+        <!-- FOTO PERSONAL -->
+        <div class="profile-photo-container">
+          <img src="mi-foto.jpg" alt="Fotografía Personal" class="profile-photo">
+        </div>
+
+        <!-- TEXTO DESCRIPTIVO -->
+        <div class="about-content">
+          <p>Soy un joven comprometido y apasionado por el bienestar de la comunidad, la igualdad jurídica y la resolución creativa de problemas. Inspirado en la estética mesoamericana combinada con la ingeniería moderna y el dinamismo visual del cómic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HABLEMOS DE TU PROBLEMÁTICA -->
+    <section id="problematica" class="comic-panel contact-section">
+      <h2 class="main-heading">Hablemos de tu problemática.</h2>
+      
+      <div class="contact-grid">
+        
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <div class="contact-info">
+          <h3>Estamos listos para escuchar tu idea.</h3>
+          <p class="subtext">Escríbenos y te responderemos lo antes posible.</p>
+          
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-label">✉️ Email:</span>
+              <span class="info-val">r2d2medina22@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">☎️ Teléfono:</span>
+              <span class="info-val">+52 55 3906 4028</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">📸 Instagram:</span>
+              <span class="info-val">@arturo_mdd</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULARIO -->
+        <form id="problemForm" class="contact-form">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required placeholder="Tu nombre...">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="problematica-input">Cuéntame sobre tu problemática</label>
+            <textarea id="problematica-input" rows="4" required placeholder="Explícame los detalles de tu problema o proyecto..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">☎️ ENVIAR MENSAJE</button>
+        </form>
+
+      </div>
+    </section>
+
+    
+        </form>
+
+      </div>
+    </section>
+
+    <!-- BOTÓN FINAL DIRECTO A WHATSAPP -->
+    <section id="contacto" class="whatsapp-section">
+      <a href="https://wa.me/525539064028?text=Arturo%2C%20%C2%A1creo%20que%20esto%20te%20puede%20interesar%20mucho%21" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        💬 ¡Envíame un mensaje directo por WhatsApp!
+      </a>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
