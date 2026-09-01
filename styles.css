@@ -306,3 +306,61 @@ input:focus, textarea:focus {
   padding: 8px;
   border-radius: 8px;
 }
+/* Botón de hamburguesa (oculto en pantallas grandes) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 3px solid var(--comic-black);
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--comic-black);
+}
+
+.nav-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--comic-black);
+}
+
+/* Ajustes responsivos para la barra de navegación */
+@media (max-width: 700px) {
+  .comic-navbar {
+    flex-direction: row; /* Mantiene la marca y el botón en la misma línea */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .nav-toggle {
+    display: block; /* Muestra el botón en celulares */
+  }
+
+  .nav-menu {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--comic-yellow);
+    border-bottom: 4px solid var(--comic-black);
+    box-shadow: 0px 6px 0px var(--comic-black);
+    padding: 15px;
+    gap: 10px;
+  }
+
+  /* Clase que activará JavaScript para mostrar el menú desplegado */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 80px; /* Ajusta el espacio superior para móviles */
+  }
+}
