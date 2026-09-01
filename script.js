@@ -1,23 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const problemForm = document.getElementById('problemForm');
-  const telefonoWhatsApp = '525539064028';
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
 
-  if (problemForm) {
-    problemForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
 
-      // Recoger variables de los campos
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const problematica = document.getElementById('problematica-input').value.trim();
-
-      // Formato de texto enviado a WhatsApp
-      const mensajeWA = `¡Hola! Mi nombre es *${nombre}* (%0A📧 Email: ${email})%0A%0A*Cuéntame sobre tu problemática:*%0A${encodeURIComponent(problematica)}`;
-
-      // Redirección
-      window.open(`https://wa.me/${telefonoWhatsApp}?text=${mensajeWA}`, '_blank');
+    // Cierra el menú automáticamente al hacer clic en una opción
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
     });
   }
-
 });
