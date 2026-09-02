@@ -359,7 +359,41 @@ input:focus, textarea:focus {
     display: block;
     text-align: center;
   }
+/* ESTILOS DEL PIE DE PÁGINA */
+.comic-footer {
+  background-color: var(--comic-blue);
+  color: #ffffff;
+  border: 4px solid var(--comic-black);
+  box-shadow: 6px 6px 0px var(--comic-black);
+  margin-top: 40px;
+  padding: 25px 20px;
+  text-align: center;
+}
 
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-disclaimer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed var(--comic-yellow);
+  padding: 12px;
+}
+
+.footer-copy {
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  color: var(--comic-yellow);
+}
   body {
     padding-top: 80px; /* Ajusta el espacio superior para móviles */
   }
