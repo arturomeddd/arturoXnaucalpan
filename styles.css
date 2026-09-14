@@ -1,12 +1,13 @@
-/* VARIABLES Y ESTILOS MESOAMERICANOS / CÓMIC */
+/* VARIABLES Y ESTILOS ESCULPIDOS DE LA CULTURA TLATILCO (1200 - 400 a.C.) */
 :root {
-  --comic-teal: #1db1ab;
-  --comic-blue: #1c3d5a;
-  --comic-yellow: #f4c430;
-  --comic-red: #d9383a;
-  --comic-bg: #fdfbf7;
-  --comic-black: #121212;
-  --comic-green: #25D366;
+  /* Paleta de pigmentos minerales y alfarería Tlatilco */
+  --tlatilca-obsidian: #161210;   /* Barro negro profundo / obsidiana */
+  --tlatilca-terracotta: #a65e34; /* Arcilla quemada / terracota preclásica */
+  --tlatilca-caolin: #ede1cb;     /* Engobe de caolín blanco/crema */
+  --tlatilca-ocre: #cf9a3c;       /* Ocre amarillo mineral de figurillas */
+  --tlatilca-red-earth: #7a3523;  /* Ocre rojo de pigmentos cerámicos */
+  --tlatilca-bg: #f5f0e6;        /* Tono base de lienzo de arcilla */
+  --whatsapp-green: #25d366;
 }
 
 html {
@@ -21,38 +22,93 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--comic-bg);
-  color: var(--comic-black);
-  padding-top: 90px;
+  background-color: var(--tlatilca-bg);
+  color: var(--tlatilca-obsidian);
+  padding-top: 135px;
   padding-bottom: 40px;
+  /* Textura de punzonado e incisión en barro fresco */
+  background-image: 
+    radial-gradient(var(--tlatilca-terracotta) 1px, transparent 1px),
+    radial-gradient(var(--tlatilca-ocre) 0.8px, transparent 0.8px);
+  background-size: 24px 24px, 12px 12px;
+  background-position: 0 0, 6px 6px;
 }
 
+/* Tipografía de jerarquía y relieve */
 h1, h2, h3, label, .btn-submit, .whatsapp-btn, .nav-link, .nav-brand {
-  font-family: 'Bangers', cursive;
+  font-family: 'Cinzel', serif, cursive;
   letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
-/* BARRA DE NAVEGACIÓN DE PESTAÑAS */
+/* BARRA DE NAVEGACIÓN PRINCIPAL */
 .comic-navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--comic-yellow);
-  border-bottom: 4px solid var(--comic-black);
-  box-shadow: 0 4px 0px var(--comic-black);
+  background-color: var(--tlatilca-obsidian);
+  border-bottom: 3px solid var(--tlatilca-ocre);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 25px;
+  padding: 14px 30px;
+}
+
+/* 
+   CENEFA ESCULTÓRICA EN LA BARRA PRINCIPAL:
+   Inspirada en las figurillas de "Pretty Ladies" y la alfarería bicéfala/doble rostro de Tlatilco.
+   Representa las caras duales estilizadas, torsos de caderas anchas y patrones incisos de petatillo.
+*/
+
+/* Capa 1: Moldura de incisiones tipo relieve en terracota */
+.comic-navbar::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--tlatilca-ocre);
+  /* Muestra de punzonado ceremonial continuo */
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--tlatilca-obsidian) 0px,
+    var(--tlatilca-obsidian) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+}
+
+/* Capa 2: Escultura SVG codificada de la alfarería Tlatilco integrada directamente en el borde */
+.comic-navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-color: var(--tlatilca-terracotta);
+  /* Patrón SVG con el contorno ritual de doble cabeza / "Pretty Ladies" e incisiones geométricas preclásicas */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='16' viewBox='0 0 160 16'%3E%3Cpath fill='%23161210' d='M0 0h160v4H0z'/%3E%3Cpath fill='%23cf9a3c' d='M8 4c-3 0-5 2-5 4s2 4 5 4 5-2 5-4-2-4-5-4zm14 0c-3 0-5 2-5 4s2 4 5 4 5-2 5-4-2-4-5-4zM15 12c-4 0-7 2-8 4h18c-1-2-4-4-10-4z'/%3E%3Cpath fill='%237a3523' d='M45 4l5 8h-10zm25 0l5 8h-10zm45 0l5 8h-10zm25 0l5 8h-10z'/%3E%3Cpath fill='%23ede1cb' d='M30 4h10v2H30zm40 0h10v2H70zm40 0h10v2h-10zm40 0h10v2h-10z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 160px 16px;
+  /* Recorte en crestería curva que emula la forma de las vasijas cerámicas ceremoniales */
+  clip-path: polygon(
+    0% 0%, 5% 100%, 10% 20%, 15% 100%, 20% 0%, 25% 100%, 30% 20%, 35% 100%, 
+    40% 0%, 45% 100%, 50% 20%, 55% 100%, 60% 0%, 65% 100%, 70% 20%, 75% 100%, 
+    80% 0%, 85% 100%, 90% 20%, 95% 100%, 100% 0%
+  );
 }
 
 .nav-brand {
-  font-size: 2rem;
-  color: var(--comic-blue);
-  text-shadow: 1px 1px 0px #fff;
+  font-size: 2.1rem;
+  color: var(--tlatilca-caolin);
+  text-shadow: 2px 2px 0px var(--tlatilca-terracotta);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav-menu {
@@ -63,86 +119,123 @@ h1, h2, h3, label, .btn-submit, .whatsapp-btn, .nav-link, .nav-brand {
 
 .nav-link {
   text-decoration: none;
-  color: var(--comic-black);
-  background-color: #ffffff;
-  padding: 8px 16px;
-  border: 3px solid var(--comic-black);
-  box-shadow: 3px 3px 0px var(--comic-black);
-  font-size: 1.2rem;
-  transition: all 0.1s ease;
+  color: var(--tlatilca-obsidian);
+  background-color: var(--tlatilca-caolin);
+  padding: 8px 18px;
+  border: 3px solid var(--tlatilca-terracotta);
+  /* Bordes orgánicos modelados libremente */
+  border-radius: 8px 2px 8px 2px;
+  box-shadow: 3px 3px 0px var(--tlatilca-obsidian);
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-  background-color: var(--comic-teal);
-  color: #ffffff;
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px var(--comic-black);
+  background-color: var(--tlatilca-ocre);
+  color: var(--tlatilca-obsidian);
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px var(--tlatilca-terracotta);
 }
 
-/* CONTENEDOR Y PANELES */
+/* CONTENEDORES CON EFECTO DE PANEL DE BARRO GRABADO */
 .container {
   max-width: 950px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 40px;
   padding: 0 15px;
 }
 
 .comic-panel {
   background: #ffffff;
-  border: 4px solid var(--comic-black);
-  box-shadow: 8px 8px 0px var(--comic-black);
-  padding: 25px;
-  scroll-margin-top: 110px;
+  border: 4px solid var(--tlatilca-obsidian);
+  box-shadow: 8px 8px 0px var(--tlatilca-terracotta), 14px 14px 0px var(--tlatilca-obsidian);
+  border-radius: 10px 4px 10px 4px;
+  padding: 30px;
+  scroll-margin-top: 160px;
+  position: relative;
 }
 
-/* HEADER */
+/* Franja superior grabada en cada panel */
+.comic-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--tlatilca-terracotta),
+    var(--tlatilca-terracotta) 10px,
+    var(--tlatilca-ocre) 10px,
+    var(--tlatilca-ocre) 20px
+  );
+}
+
+/* HEADER Y LOGO */
 .header-panel {
   text-align: center;
-  background: linear-gradient(135deg, #e6f7f6 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--tlatilca-caolin) 0%, #ffffff 100%);
 }
 
 .logo-container img {
   max-width: 170px;
   height: auto;
-  filter: drop-shadow(4px 4px 0px var(--comic-black));
+  filter: drop-shadow(4px 4px 0px var(--tlatilca-obsidian));
 }
 
+.logo-container img.main-logo {
+  max-width: 220px;
+  height: auto;
+  border: 4px solid var(--tlatilca-obsidian);
+  box-shadow: 6px 6px 0px var(--tlatilca-ocre);
+  background-color: var(--tlatilca-caolin);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* BURBUJA ESCULTÓRICA BASADA EN LAS "PRETTY LADIES" */
 .speech-bubble {
-  background: var(--comic-yellow);
-  border: 3px solid var(--comic-black);
-  padding: 12px 24px;
-  margin-top: 15px;
+  background: var(--tlatilca-terracotta);
+  border: 3px solid var(--tlatilca-obsidian);
+  padding: 14px 28px;
+  margin-top: 20px;
   display: inline-block;
-  box-shadow: 4px 4px 0px var(--comic-black);
+  border-radius: 20px 4px 20px 4px;
+  box-shadow: 5px 5px 0px var(--tlatilca-obsidian);
 }
 
 .speech-bubble h2 {
-  font-size: 1.7rem;
-  color: var(--comic-black);
+  font-size: 1.6rem;
+  color: var(--tlatilca-caolin);
+  text-shadow: 1px 1px 0px var(--tlatilca-obsidian);
 }
 
-/* SECCIÓN QUIÉN SOY Y FOTO DE PERFIL */
+/* SECCIÓN PERFIL */
 .section-title {
-  color: var(--comic-teal);
+  color: var(--tlatilca-obsidian);
   font-size: 2.3rem;
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 0px var(--comic-black);
+  margin-bottom: 18px;
+  border-bottom: 3px dashed var(--tlatilca-terracotta);
+  padding-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 25px;
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
   align-items: center;
 }
 
 .profile-photo-container {
-  border: 4px solid var(--comic-black);
-  box-shadow: 5px 5px 0px var(--comic-black);
-  background: var(--comic-yellow);
+  border: 4px solid var(--tlatilca-obsidian);
+  box-shadow: 6px 6px 0px var(--tlatilca-terracotta), 10px 10px 0px var(--tlatilca-ocre);
+  background: var(--tlatilca-ocre);
   overflow: hidden;
+  border-radius: 14px 4px 14px 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,77 +243,82 @@ h1, h2, h3, label, .btn-submit, .whatsapp-btn, .nav-link, .nav-brand {
 
 .profile-photo {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   display: block;
 }
 
 .about-content {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .main-heading {
-  font-size: 2.5rem;
-  color: var(--comic-blue);
+  font-size: 2.4rem;
+  color: var(--tlatilca-obsidian);
   margin-bottom: 20px;
 }
 
-/* GRID Y CONTACTO */
+/* CONTACTO Y FORMULARIO */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 30px;
 }
 
 .contact-info {
-  background-color: var(--comic-teal);
-  color: #ffffff;
-  padding: 25px;
-  border: 3px solid var(--comic-black);
-  box-shadow: 4px 4px 0px var(--comic-black);
+  background-color: var(--tlatilca-terracotta);
+  color: var(--tlatilca-caolin);
+  padding: 28px;
+  border: 4px solid var(--tlatilca-obsidian);
+  border-radius: 10px 4px 10px 4px;
+  box-shadow: 6px 6px 0px var(--tlatilca-obsidian);
 }
 
 .contact-info h3 {
-  color: var(--comic-yellow);
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  color: var(--tlatilca-caolin);
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 0px var(--tlatilca-obsidian);
 }
 
 .subtext {
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: var(--tlatilca-ocre);
 }
 
 .info-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .info-item {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid var(--comic-black);
-  padding: 8px 12px;
+  background: rgba(22, 18, 16, 0.35);
+  border: 2px solid var(--tlatilca-obsidian);
+  border-radius: 6px;
+  padding: 10px 14px;
 }
 
 .info-label {
   display: block;
-  font-family: 'Bangers', cursive;
-  color: var(--comic-yellow);
-  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  color: var(--tlatilca-ocre);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .info-val {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
+  color: #ffffff;
 }
 
-/* FORMULARIO */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .form-group {
@@ -229,57 +327,130 @@ h1, h2, h3, label, .btn-submit, .whatsapp-btn, .nav-link, .nav-brand {
 }
 
 label {
-  font-size: 1.3rem;
-  margin-bottom: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: var(--tlatilca-obsidian);
 }
 
 input, textarea {
-  padding: 10px;
-  border: 3px solid var(--comic-black);
+  padding: 12px;
+  border: 3px solid var(--tlatilca-obsidian);
+  border-radius: 6px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.95rem;
-  background: #fafafa;
+  font-size: 1rem;
+  background: var(--tlatilca-caolin);
+  color: var(--tlatilca-obsidian);
+  transition: all 0.2s;
 }
 
 input:focus, textarea:focus {
   outline: none;
   background: #ffffff;
-  border-color: var(--comic-teal);
+  border-color: var(--tlatilca-terracotta);
+  box-shadow: 0 0 0 3px rgba(166, 94, 52, 0.3);
 }
 
 .btn-submit {
-  background: var(--comic-red);
-  color: #ffffff;
-  font-size: 1.5rem;
-  padding: 12px;
-  border: 3px solid var(--comic-black);
-  box-shadow: 4px 4px 0px var(--comic-black);
+  background: var(--tlatilca-obsidian);
+  color: var(--tlatilca-caolin);
+  font-size: 1.4rem;
+  padding: 14px;
+  border: 3px solid var(--tlatilca-ocre);
+  border-radius: 6px;
+  box-shadow: 5px 5px 0px var(--tlatilca-terracotta);
   cursor: pointer;
-  transition: transform 0.1s;
+  transition: all 0.2s ease;
 }
 
 .btn-submit:hover {
+  background: var(--tlatilca-terracotta);
+  color: var(--tlatilca-caolin);
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--comic-black);
+  box-shadow: 7px 7px 0px var(--tlatilca-obsidian);
 }
 
-/* BOTÓN DE WHATSAPP */
 .whatsapp-btn {
   display: block;
   text-align: center;
-  background: var(--comic-green);
+  background: var(--whatsapp-green);
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.8rem;
-  padding: 16px;
-  border: 4px solid var(--comic-black);
-  box-shadow: 6px 6px 0px var(--comic-black);
-  transition: transform 0.1s;
+  font-size: 1.7rem;
+  padding: 18px;
+  border: 4px solid var(--tlatilca-obsidian);
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px var(--tlatilca-obsidian);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .whatsapp-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--comic-black);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px var(--tlatilca-obsidian);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 3px solid var(--tlatilca-caolin);
+  background-color: var(--tlatilca-obsidian);
+  color: var(--tlatilca-caolin);
+  font-size: 1.5rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0px var(--tlatilca-terracotta);
+}
+
+.nav-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--tlatilca-obsidian);
+}
+
+/* PIE DE PÁGINA */
+.comic-footer {
+  background-color: var(--tlatilca-obsidian);
+  color: var(--tlatilca-caolin);
+  border-top: 4px solid var(--tlatilca-terracotta);
+  position: relative;
+  margin-top: 50px;
+  padding: 35px 20px 25px 20px;
+  text-align: center;
+}
+
+.comic-footer::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--tlatilca-ocre);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-disclaimer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  background: rgba(237, 225, 203, 0.08);
+  border: 2px dashed var(--tlatilca-ocre);
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.footer-copy {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  color: var(--tlatilca-ocre);
 }
 
 /* RESPONSIVO */
@@ -289,68 +460,30 @@ input:focus, textarea:focus {
   }
 
   .comic-navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  body {
-    padding-top: 140px;
-  }
-}
-.logo-container img.main-logo {
-  max-width: 220px;
-  height: auto;
-  border: 4px solid var(--comic-black);
-  box-shadow: 6px 6px 0px var(--comic-black);
-  background-color: #ffffff;
-  padding: 8px;
-  border-radius: 8px;
-}
-/* Botón de hamburguesa (oculto en pantallas grandes) */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: 3px solid var(--comic-black);
-  background-color: #ffffff;
-  font-size: 1.5rem;
-  padding: 4px 10px;
-  cursor: pointer;
-  box-shadow: 3px 3px 0px var(--comic-black);
-}
-
-.nav-toggle:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--comic-black);
-}
-
-/* Ajustes responsivos para la barra de navegación */
-@media (max-width: 700px) {
-  .comic-navbar {
-    flex-direction: row; /* Mantiene la marca y el botón en la misma línea */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 12px 18px;
   }
 
   .nav-toggle {
-    display: block; /* Muestra el botón en celulares */
+    display: block;
   }
 
   .nav-menu {
-    display: none; /* Oculta el menú por defecto */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--comic-yellow);
-    border-bottom: 4px solid var(--comic-black);
-    box-shadow: 0px 6px 0px var(--comic-black);
-    padding: 15px;
-    gap: 10px;
+    background-color: var(--tlatilca-obsidian);
+    border-bottom: 4px solid var(--tlatilca-terracotta);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+    padding: 18px;
+    gap: 12px;
   }
 
-  /* Clase que activará JavaScript para mostrar el menú desplegado */
   .nav-menu.active {
     display: flex;
   }
@@ -359,42 +492,8 @@ input:focus, textarea:focus {
     display: block;
     text-align: center;
   }
-/* ESTILOS DEL PIE DE PÁGINA */
-.comic-footer {
-  background-color: var(--comic-blue);
-  color: #ffffff;
-  border: 4px solid var(--comic-black);
-  box-shadow: 6px 6px 0px var(--comic-black);
-  margin-top: 40px;
-  padding: 25px 20px;
-  text-align: center;
-}
 
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.footer-disclaimer {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-style: italic;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px dashed var(--comic-yellow);
-  padding: 12px;
-}
-
-.footer-copy {
-  font-family: 'Bangers', cursive;
-  font-size: 1.3rem;
-  letter-spacing: 1.5px;
-  color: var(--comic-yellow);
-}
   body {
-    padding-top: 80px; /* Ajusta el espacio superior para móviles */
+    padding-top: 100px;
   }
 }
